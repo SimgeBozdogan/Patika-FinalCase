@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApplicationForm from "../components/forms/ApplicationForm";
-import { createSubmission } from "../services/submissionsService";
+import { createApplication } from "../services/applicationsService";
 import { generateRandomGUID } from "../utils/stringUtils";
 import Loading from "../components/Loading";
 import { toast } from "react-toastify";
@@ -17,15 +17,15 @@ const CreateApplication = () => {
     try {
       const applicationCode = generateRandomGUID();
       setLoading(true);
-      const submissionResponse = await createSubmission({
+      const applicationResponse = await createApplication({
         ...data,
         applicationCode,
-        applicationStatus: applicationStatus.WAITING
+        applicationStatus: applicationStatus.WAITING,
       });
       setLoading(false);
       toast.success("Başvuru bilgisi başarılı bir şekilde kaydedildi.");
       navigate("/basvuru-basarili", {
-        state: { submissionResponse },
+        state: { applicationResponse },
       });
     } catch (error) {
       console.error(error);

@@ -14,7 +14,7 @@ import { convertTimestampToDateString } from "../utils/dateUtils";
 
 const ApplicationSuccess = () => {
   const location = useLocation();
-  const { submissionResponse } = location.state || {};
+  const { applicationResponse } = location.state || {};
 
   return (
     <Container maxWidth="sm">
@@ -34,7 +34,7 @@ const ApplicationSuccess = () => {
               primary={<strong>Başvuru Kodu:</strong>}
               secondary={
                 <strong style={{ backgroundColor: "aqua" }}>
-                  {submissionResponse?.applicationCode}
+                  {applicationResponse?.applicationCode}
                 </strong>
               }
             />
@@ -42,50 +42,50 @@ const ApplicationSuccess = () => {
           <ListItem>
             <ListItemText
               primary={<strong>Ad:</strong>}
-              secondary={submissionResponse?.name}
+              secondary={applicationResponse?.name}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Soyad:</strong>}
-              secondary={submissionResponse?.surname}
+              secondary={applicationResponse?.surname}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Yaş:</strong>}
-              secondary={submissionResponse?.age}
+              secondary={applicationResponse?.age}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>TC No:</strong>}
-              secondary={submissionResponse?.tcNo}
+              secondary={applicationResponse?.tcNo}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Başvuru Nedeni:</strong>}
-              secondary={submissionResponse?.reasonForApplication}
+              secondary={applicationResponse?.reasonForApplication}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Adres Bilgisi:</strong>}
-              secondary={submissionResponse?.adress}
+              secondary={applicationResponse?.adress}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Fotograflar/Ekler:</strong>}
-              secondary={submissionResponse?.attachment}
+              secondary={applicationResponse?.attachment}
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary={<strong>Başvuru Tarihi:</strong>}
               secondary={convertTimestampToDateString(
-                submissionResponse?.createDate
+                applicationResponse?.createDate
               )}
             />
           </ListItem>

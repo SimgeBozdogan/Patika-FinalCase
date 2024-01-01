@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Define your base API URLs for different endpoints
 const BASE_URL = {
-  submissions: 'https://659318f3bb12970719905d89.mockapi.io/api/v1/submissions',
-  admin: 'https://example.com/api/v1/admins', // Replace with your admin API base URL
+  applications:
+    "https://659318f3bb12970719905d89.mockapi.io/api/v1/applications",
+  admin: "https://659318f3bb12970719905d89.mockapi.io/api/v1/admins",
 };
 
 const createApi = (endpoint) => {
@@ -60,5 +61,5 @@ const createApi = (endpoint) => {
 };
 
 // Create API instances for different endpoints
-export const submissionsApi = createApi('submissions');
-export const adminApi = createApi('admin');
+export const applicationsApi = createApi("applications");
+export const adminsApi = createApi("admins");

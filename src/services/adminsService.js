@@ -1,6 +1,6 @@
-import { adminApi } from "./api";
+import { adminsApi } from "./api";
 
-// Function to get all submissions
-export const getAllSubmissions = async () => {
-  return await adminApi.get("/");
+// Function to get all admins
+export const getAllAdmins = async () => {
+  return await adminsApi.get("/");
 };

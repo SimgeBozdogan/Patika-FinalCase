@@ -4,7 +4,10 @@ import { useParams } from "react-router-dom";
 import { Container, Typography, Paper } from "@material-ui/core";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getAllSubmissions, getSubmissionById } from "../services/submissionsService";
+import {
+  getAllApplications,
+  getApplicationById,
+} from "../services/applicationsService";
 import Loading from "../components/Loading";
 
 const ViewApplication = () => {
@@ -16,27 +19,22 @@ const ViewApplication = () => {
     const fetchApplicationData = async () => {
       try {
         setLoading(true);
-        const allSubmissionsResponse = await getAllSubmissions();
+        const allApplicationsResponse = await getAllApplications();
 
-        const selectedSubmission = allSubmissionsResponse.find(
+        const selectedApplication = allApplicationsResponse.find(
           (element) => element?.applicationCode === basvuruNo
         );
-        const selectedSubmissionResponse = await getSubmissionById(
-          selectedSubmission.id
+        const selectedApplicationResponse = await getApplicationById(
+          selectedApplication.id
         );
         setLoading(false);
 
-        setApplicationData(selectedSubmissionResponse);
+        setApplicationData(selectedApplicationResponse);
 
-        // Show success message using toastify
         toast.success("Başvuru bilgisi başarılı bir şekilde getirildi.");
       } catch (error) {
         console.error("404(bulunamadı):", error);
-
-        // Show error message using toastify
         toast.error("404(bulunamadı)");
-
-        // Set applicationData to null to trigger loading state or handle differently
         setApplicationData(null);
       }
     };

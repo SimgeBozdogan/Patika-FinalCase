@@ -15,6 +15,7 @@ const AppRouter = () => {
         <Route path="/basvuru-sorgula" element={<QueryApplication />} />
         <Route path="/basvuru/:basvuruNo" element={<ViewApplication />} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/basvuru-listesi" element={<AdminLogin />} />
       </Routes>
     </Router>
   );
