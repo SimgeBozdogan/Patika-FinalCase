@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Container, Typography, Paper } from "@material-ui/core";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getSubmissions, getSubmissionById } from "../services/api";
+import { getAllSubmissions, getSubmissionById } from "../services/submissionsService";
 import Loading from "../components/Loading";
 
 const ViewApplication = () => {
@@ -16,7 +16,7 @@ const ViewApplication = () => {
     const fetchApplicationData = async () => {
       try {
         setLoading(true);
-        const allSubmissionsResponse = await getSubmissions();
+        const allSubmissionsResponse = await getAllSubmissions();
 
         const selectedSubmission = allSubmissionsResponse.find(
           (element) => element?.applicationCode === basvuruNo

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApplicationForm from "../components/forms/ApplicationForm";
-import { createSubmission } from "../services/api";
+import { createSubmission } from "../services/submissionsService";
 import { generateRandomGUID } from "../utils/stringUtils";
 import Loading from "../components/Loading";
 import { toast } from "react-toastify";
