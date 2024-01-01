@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CreateApplication from "./pages/CreateApplication";
-import ApplicationSuccess from "./pages/ApplicationSuccess";
-import QueryApplication from "./pages/QueryApplication";
-import ViewApplication from "./pages/ViewApplication";
-import AdminLogin from "./pages/AdminLogin";
+import CreateApplication from "./pages/Application/CreateApplication";
+import ApplicationSuccess from "./pages/Application/ApplicationSuccess";
+import QueryApplication from "./pages/Application/QueryApplication";
+import ViewApplication from "./pages/Application/ViewApplication";
+import AdminLogin from "./pages/Admin/AdminLogin";
 
 const AppRouter = () => {
   return (
