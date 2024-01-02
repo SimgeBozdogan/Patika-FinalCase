@@ -1,33 +1,32 @@
+// AdminLogin.js
 import React, { useState } from "react";
 import { Grid, Paper, TextField, Button, Typography } from "@material-ui/core";
-import { getAllAdmins } from "../../services/adminsService";
-import Loading from "../../components/Loading";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import AuthService from "../../services/AuthService";
+import Loading from "../../components/Loading";
 
 const AdminLogin = () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const allAdminsResponse = await getAllAdmins();
-      const loggedInUserCredentials = allAdminsResponse.find(
-        (element) =>
-          element.userName === userName && element.password === password
-      );
-
-      if (!loggedInUserCredentials) {
-        toast.error("Kullanıcı bilgileri yanlış");
-      } else {
+      await AuthService.login(username, password);
+      if (AuthService.isLoggedIn()) {
         toast.success("Giriş başarılı.");
+        navigate("/admin/basvuru-listesi");
+      } else {
+        toast.error("Kullanıcı bilgileri yanlış.");
       }
-
-      setLoading(false);
     } catch (error) {
-      console.error("Login failed:", error.message);
-      toast.error("Kullanıcı bilgileri yanlış");
+      console.error(error);
+      toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,8 +50,8 @@ const AdminLogin = () => {
               variant="outlined"
               fullWidth
               margin="normal"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <TextField
               label="Şifre"

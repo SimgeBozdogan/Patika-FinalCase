@@ -4,7 +4,7 @@ import axios from "axios";
 const BASE_URL = {
   applications:
     "https://659318f3bb12970719905d89.mockapi.io/api/v1/applications",
-  admin: "https://659318f3bb12970719905d89.mockapi.io/api/v1/admins",
+  admins: "https://659318f3bb12970719905d89.mockapi.io/api/v1/admins",
 };
 
 const createApi = (endpoint) => {

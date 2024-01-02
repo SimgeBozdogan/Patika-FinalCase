@@ -1,18 +1,10 @@
 import React from "react";
 import { CircularProgress, Typography } from "@material-ui/core";
+import CenteredContainer from "./CenteredContainer";
 
 const Loading = () => {
   return (
-    <div
-      style={{
-        margin: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "100vh",
-        textAlign: "center",
-      }}
-    >
+    <CenteredContainer>
       <CircularProgress size={60} thickness={4} color="primary" />
       <Typography
         variant="h6"
@@ -21,7 +13,7 @@ const Loading = () => {
       >
         Loading...
       </Typography>
-    </div>
+    </CenteredContainer>
   );
 };
 

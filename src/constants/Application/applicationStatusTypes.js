@@ -1,5 +1,5 @@
 export const applicationStatus = {
-  WAITING: "Bekliyor",
+  PENDING: "Bekliyor",
   RESOLVED: "Çözüldü",
   CANCELED: "İptal edildi",
 };

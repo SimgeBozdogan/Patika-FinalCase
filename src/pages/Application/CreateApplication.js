@@ -20,7 +20,7 @@ const CreateApplication = () => {
       const applicationResponse = await createApplication({
         ...data,
         applicationCode,
-        applicationStatus: applicationStatus.WAITING,
+        applicationStatus: applicationStatus.PENDING,
       });
       setLoading(false);
       toast.success("Başvuru bilgisi başarılı bir şekilde kaydedildi.");
@@ -30,6 +30,8 @@ const CreateApplication = () => {
     } catch (error) {
       console.error(error);
       toast.error("Yeni basvuru eklenirken bir hata olustu.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,7 +39,6 @@ const CreateApplication = () => {
     <Loading />
   ) : (
     <div>
-      <h1>Başvuru Oluştur</h1>
       <ApplicationForm onSubmit={handleFormSubmit} />
     </div>
   );

@@ -9,6 +9,7 @@ import {
   getApplicationById,
 } from "../../services/applicationsService";
 import Loading from "../../components/Loading";
+import CenteredContainer from "../../components/CenteredContainer";
 
 const ViewApplication = () => {
   const { basvuruNo } = useParams();
@@ -33,9 +34,11 @@ const ViewApplication = () => {
 
         toast.success("Başvuru bilgisi başarılı bir şekilde getirildi.");
       } catch (error) {
-        console.error("404(bulunamadı):", error);
+        console.error(error);
         toast.error("404(bulunamadı)");
         setApplicationData(null);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -47,24 +50,26 @@ const ViewApplication = () => {
   }
 
   return (
-    <Container maxWidth="sm">
-      <Paper elevation={3} style={{ padding: "16px", marginTop: "16px" }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Application Details
-        </Typography>
-        {/* Display application details based on 'applicationData' */}
-        <Typography variant="body1" align="center" paragraph>
-          Application Code: {applicationData?.applicationCode}
-        </Typography>
-        <Typography variant="body1" align="center" paragraph>
-          Name: {applicationData?.name}
-        </Typography>
-        <Typography variant="body1" align="center" paragraph>
-          Surname: {applicationData?.surname}
-        </Typography>
-        {/* Include other application details as needed */}
-      </Paper>
-    </Container>
+    <CenteredContainer>
+      <Container maxWidth="sm">
+        <Paper elevation={3} style={{ padding: "16px", marginTop: "16px" }}>
+          <Typography variant="h4" align="center" gutterBottom>
+            Application Details
+          </Typography>
+          {/* Display application details based on 'applicationData' */}
+          <Typography variant="body1" align="center" paragraph>
+            Application Code: {applicationData?.applicationCode}
+          </Typography>
+          <Typography variant="body1" align="center" paragraph>
+            Name: {applicationData?.name}
+          </Typography>
+          <Typography variant="body1" align="center" paragraph>
+            Surname: {applicationData?.surname}
+          </Typography>
+          {/* Include other application details as needed */}
+        </Paper>
+      </Container>
+    </CenteredContainer>
   );
 };
 
