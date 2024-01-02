@@ -41,7 +41,7 @@ const AdminLogin = () => {
       <Grid item xs={12} sm={8} md={6} lg={4}>
         <Paper elevation={3} style={{ padding: "16px" }}>
           <Typography variant="h4" align="center" gutterBottom>
-            Admin Login
+            Admin Giriş
           </Typography>
           <form>
             <TextField

@@ -53,16 +53,16 @@ const ViewApplication = () => {
       <Container maxWidth="sm">
         <Paper elevation={3} style={{ padding: "16px", marginTop: "16px" }}>
           <Typography variant="h4" align="center" gutterBottom>
-            Application Details
+            Başvuru Detayları
           </Typography>
           <Typography variant="body1" align="center" paragraph>
-            Application Code: {applicationData?.applicationCode}
+            Başvuru Kodu: {applicationData?.applicationCode}
           </Typography>
           <Typography variant="body1" align="center" paragraph>
-            Name: {applicationData?.name}
+            Ad: {applicationData?.name}
           </Typography>
           <Typography variant="body1" align="center" paragraph>
-            Surname: {applicationData?.surname}
+            Soyad: {applicationData?.surname}
           </Typography>
           <Typography variant="body1" align="center" paragraph>
             Başvuru Cevabı: {applicationData?.adminResponse}

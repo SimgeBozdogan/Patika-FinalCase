@@ -18,7 +18,7 @@ const ApplicationDetailsModal = ({ open, onClose, application }) => {
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Application Details</DialogTitle>
+      <DialogTitle>Başvuru Detayları</DialogTitle>
       <DialogContent>
         {application && (
           <>
