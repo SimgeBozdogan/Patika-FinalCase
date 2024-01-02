@@ -43,28 +43,40 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+# Deployed Vercel App
+
+Public Link: https://patika-final-case-snowy.vercel.app/
+
 # Projenin Çalışır Halinin Ekran Görüntüleri
 
 ## 1. Başvuru Oluştur: /basvuru-olustur
-   ![Başvuru Oluştur](./public/images/basvuru-olustur.png)
+
+![Başvuru Oluştur](./public/images/basvuru-olustur.png)
 
 ## 2. Başvuru Başarılı: /basvuru-basarili
-   ![Başvuru Başarılı](./public/images/basvuru-basarili.png)
+
+![Başvuru Başarılı](./public/images/basvuru-basarili.png)
 
 ## 3. Başvuru Sorgula: /basvuru-sorgula
-   ![Başvuru Sorgula](./public/images/basvuru-sorgula.png)
+
+![Başvuru Sorgula](./public/images/basvuru-sorgula.png)
 
 ## 4. Başvuru Detayları: /basvuru/{basvuruNo}
-   ![Başvuru Detayları](./public/images/basvuru-detayları.png)
+
+![Başvuru Detayları](./public/images/basvuru-detayları.png)
 
 ## 5. Admin Giriş: /admin
-   ![Alt text](./public/images/admin-giris.png)
+
+![Alt text](./public/images/admin-giris.png)
 
 ## 6. Admin Başvuru Listesi: /admin/basvuru-listesi
-   ![Admin Başvuru Listesit](./public/images/admin-basvuru-listesi.png)
+
+![Admin Başvuru Listesit](./public/images/admin-basvuru-listesi.png)
 
 ## 7. Admin Başvuru Güncelleme: /admin/basvuru/{basvuruNo}
-   ![Admin Başvuru Güncelleme](./public/images/admin-basvuru-guncelleme.png)
+
+![Admin Başvuru Güncelleme](./public/images/admin-basvuru-guncelleme.png)
 
 ## 8. Not Found Sayfası
-   ![Not Found Sayfası](./public/images/not-found.png)
+
+![Not Found Sayfası](./public/images/not-found.png)
