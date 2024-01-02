@@ -1,4 +1,3 @@
-// ApplicationDetailsModal.js
 import React from "react";
 import {
   Dialog,
@@ -8,8 +7,15 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 
 const ApplicationDetailsModal = ({ open, onClose, application }) => {
+  const navigate = useNavigate();
+
+  const handleNavigateToApplication = () => {
+    navigate(`/admin/basvuru/${application.applicationCode}`);
+  };
+
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Application Details</DialogTitle>
@@ -36,8 +42,11 @@ const ApplicationDetailsModal = ({ open, onClose, application }) => {
         )}
       </DialogContent>
       <DialogActions>
+        <Button onClick={handleNavigateToApplication} color="primary">
+          Başvuruya Git
+        </Button>
         <Button onClick={onClose} color="primary">
-          Close
+          Kapat
         </Button>
       </DialogActions>
     </Dialog>

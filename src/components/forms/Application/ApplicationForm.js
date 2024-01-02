@@ -36,9 +36,7 @@ const ApplicationForm = ({ onSubmit }) => {
 
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      // Extracting only the file name from the dropped files
       const fileName = acceptedFiles.length > 0 ? acceptedFiles[0].name : "";
-      // Setting the value using setValue
       setValue("attachment", fileName);
     },
   });

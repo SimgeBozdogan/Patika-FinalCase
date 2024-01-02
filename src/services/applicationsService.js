@@ -11,6 +11,11 @@ export const getApplicationById = async (id) => {
 };
 
 // Function to create a new application
-export const createApplication = async (newData) => {
-  return await applicationsApi.post("/", newData);
+export const createApplication = async (data) => {
+  return await applicationsApi.post("/", data);
+};
+
+// Function to update the application
+export const updateApplication = async (data) => {
+  return await applicationsApi.put(`/${data.id}`, data);
 };

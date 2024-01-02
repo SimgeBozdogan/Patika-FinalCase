@@ -6,7 +6,8 @@ import QueryApplication from './pages/Application/QueryApplication';
 import ViewApplication from './pages/Application/ViewApplication';
 import AdminLogin from './pages/Admin/AdminLogin';
 import AdminApplicationList from './pages/Admin/AdminApplicationList';
-import NotFound from './components/NotFound'; // Import the NotFound component
+import AdminViewApplication from './pages/Admin/AdminViewApplication';
+import NotFound from './components/NotFound';
 
 const AppRouter = () => {
   return (
@@ -18,7 +19,7 @@ const AppRouter = () => {
         <Route path="/basvuru/:basvuruNo" element={<ViewApplication />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/basvuru-listesi" element={<AdminApplicationList />} />
-        {/* Add the NotFound route at the end */}
+        <Route path="/admin/basvuru/:basvuruNo" element={<AdminViewApplication />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

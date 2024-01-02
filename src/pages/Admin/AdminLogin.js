@@ -1,4 +1,3 @@
-// AdminLogin.js
 import React, { useState } from "react";
 import { Grid, Paper, TextField, Button, Typography } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";

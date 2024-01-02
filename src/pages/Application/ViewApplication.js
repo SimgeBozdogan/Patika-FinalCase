@@ -1,4 +1,3 @@
-// ViewApplication.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Typography, Paper } from "@material-ui/core";
@@ -56,7 +55,6 @@ const ViewApplication = () => {
           <Typography variant="h4" align="center" gutterBottom>
             Application Details
           </Typography>
-          {/* Display application details based on 'applicationData' */}
           <Typography variant="body1" align="center" paragraph>
             Application Code: {applicationData?.applicationCode}
           </Typography>
@@ -66,7 +64,9 @@ const ViewApplication = () => {
           <Typography variant="body1" align="center" paragraph>
             Surname: {applicationData?.surname}
           </Typography>
-          {/* Include other application details as needed */}
+          <Typography variant="body1" align="center" paragraph>
+            Başvuru Cevabı: {applicationData?.adminResponse}
+          </Typography>
         </Paper>
       </Container>
     </CenteredContainer>

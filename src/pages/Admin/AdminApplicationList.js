@@ -1,4 +1,3 @@
-// AdminApplicationList.js
 import React, { useEffect, useState } from "react";
 import { Typography, Button } from "@material-ui/core";
 import { toast } from "react-toastify";
@@ -8,6 +7,7 @@ import { applicationStatus } from "../../constants/Application/applicationStatus
 import ApplicationDetailsModal from "../../components/modals/Admin/ApplicationDetailsModal";
 import AuthService from "../../services/AuthService";
 import { useNavigate } from "react-router-dom";
+import { convertTimestampToDateString } from "../../utils/dateUtils";
 
 const AdminApplicationList = () => {
   const [pendingApplications, setPendingApplications] = useState([]);
@@ -73,14 +73,14 @@ const AdminApplicationList = () => {
                     {application.name + " " + application.surname}
                   </Typography>
                   <Typography variant="body2">
-                    Başvuru Tarihi: {application.createDate}
+                    Başvuru Tarihi: {convertTimestampToDateString(application.createDate)}
                   </Typography>
                   <Button
                     variant="outlined"
                     color="primary"
                     onClick={() => handleViewApplication(application)}
                   >
-                    View Application
+                    Görüntüle
                   </Button>
                 </li>
               ))}
